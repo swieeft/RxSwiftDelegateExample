@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxSwiftDelegateExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력 필요..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="864-c4-lsX">
+                                <rect key="frame" x="168.5" y="437.5" width="77.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YP-zJ-PPt">
+                                <rect key="frame" x="152" y="483.5" width="110" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="7ev-DS-gGE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="InputVC Open">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="864-c4-lsX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7DJ-Z6-yvx"/>
+                            <constraint firstItem="0YP-zJ-PPt" firstAttribute="top" secondItem="864-c4-lsX" secondAttribute="bottom" constant="25" id="LnU-7Z-m4O"/>
+                            <constraint firstItem="0YP-zJ-PPt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b29-vl-BXm"/>
+                            <constraint firstItem="864-c4-lsX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zIn-jC-ihA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputLabel" destination="864-c4-lsX" id="rGk-NH-3cB"/>
+                        <outlet property="openButton" destination="0YP-zJ-PPt" id="ZsU-bx-BVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Input View Controller-->
+        <scene sceneID="dg7-Tc-2mu">
+            <objects>
+                <viewController storyboardIdentifier="InputViewController" id="VNU-sa-DNe" customClass="InputViewController" customModule="RxSwiftDelegateExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b3U-zq-PsI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ch-MF-Eau">
+                                <rect key="frame" x="25" y="431" width="364" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ci-g6-TXv">
+                                <rect key="frame" x="172" y="490" width="70" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="R1L-US-l7a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jB8-fa-kbp" firstAttribute="trailing" secondItem="0Ch-MF-Eau" secondAttribute="trailing" constant="25" id="7Y7-KZ-Ulv"/>
+                            <constraint firstItem="0Ch-MF-Eau" firstAttribute="centerY" secondItem="b3U-zq-PsI" secondAttribute="centerY" id="DrZ-ca-M33"/>
+                            <constraint firstItem="0Ch-MF-Eau" firstAttribute="leading" secondItem="jB8-fa-kbp" secondAttribute="leading" constant="25" id="KnJ-t9-qVe"/>
+                            <constraint firstItem="9Ci-g6-TXv" firstAttribute="top" secondItem="0Ch-MF-Eau" secondAttribute="bottom" constant="25" id="RFo-2m-tV5"/>
+                            <constraint firstItem="9Ci-g6-TXv" firstAttribute="centerX" secondItem="b3U-zq-PsI" secondAttribute="centerX" id="VJc-Vq-6ce"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jB8-fa-kbp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="trl-oe-9hU"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="9Ci-g6-TXv" id="eE2-Vd-nHH"/>
+                        <outlet property="textField" destination="0Ch-MF-Eau" id="kIf-Eb-cxa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHg-EJ-Kkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="138"/>
+        </scene>
+    </scenes>
+</document>
