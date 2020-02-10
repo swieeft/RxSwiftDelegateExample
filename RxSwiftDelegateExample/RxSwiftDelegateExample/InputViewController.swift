@@ -44,25 +44,43 @@ class InputViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
-    
+    @IBOutlet weak var confirmSubjectButton: UIButton!
+
     weak var delegate: InputViewControllerDelegate?
     
     var disposeBag = DisposeBag()
-    
+
+    private let inputStringSubject = PublishSubject<String>()
+    var inputString: Observable<String> {
+        return inputStringSubject.asObservable()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         confirmButton.rx.tap
             .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] _ in
                 guard let string = self?.textField.text else { return }
-                
+
                 self?.dismiss(animated: true, completion: {
                     self?.delegate?.sendString?(string: string)
                 })
             })
             .disposed(by: disposeBag)
-        
+
+        confirmSubjectButton.rx.tap
+            .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let string = self?.textField.text else { return }
+
+                self?.dismiss(animated: true, completion: {
+                    self?.inputStringSubject.onNext(string)
+                    self?.inputStringSubject.onCompleted()
+                })
+            })
+            .disposed(by: disposeBag)
+
         textField.rx.controlEvent(.editingDidEndOnExit)
             .subscribe(onNext: { [weak self] _ in
                 self?.view.endEditing(true)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,11 +32,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fen-lu-YhV">
+                                <rect key="frame" x="112" y="538.5" width="190" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="IlL-Z2-swk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="InputVC Open&lt;Subject&gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="864-c4-lsX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7DJ-Z6-yvx"/>
+                            <constraint firstItem="fen-lu-YhV" firstAttribute="top" secondItem="0YP-zJ-PPt" secondAttribute="bottom" constant="25" id="IJM-QU-gaT"/>
                             <constraint firstItem="0YP-zJ-PPt" firstAttribute="top" secondItem="864-c4-lsX" secondAttribute="bottom" constant="25" id="LnU-7Z-m4O"/>
+                            <constraint firstItem="fen-lu-YhV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PJE-Ry-SYp"/>
                             <constraint firstItem="0YP-zJ-PPt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b29-vl-BXm"/>
                             <constraint firstItem="864-c4-lsX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zIn-jC-ihA"/>
                         </constraints>
@@ -45,6 +58,7 @@
                     <connections>
                         <outlet property="inputLabel" destination="864-c4-lsX" id="rGk-NH-3cB"/>
                         <outlet property="openButton" destination="0YP-zJ-PPt" id="ZsU-bx-BVd"/>
+                        <outlet property="openSubjectButton" destination="fen-lu-YhV" id="BVV-8O-ra2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,11 +89,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="207-ts-iCG">
+                                <rect key="frame" x="132" y="545" width="150" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="QzH-3r-147"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Confirm&lt;Subject&gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="jB8-fa-kbp" firstAttribute="trailing" secondItem="0Ch-MF-Eau" secondAttribute="trailing" constant="25" id="7Y7-KZ-Ulv"/>
+                            <constraint firstItem="207-ts-iCG" firstAttribute="centerX" secondItem="b3U-zq-PsI" secondAttribute="centerX" id="BT6-6s-LkM"/>
                             <constraint firstItem="0Ch-MF-Eau" firstAttribute="centerY" secondItem="b3U-zq-PsI" secondAttribute="centerY" id="DrZ-ca-M33"/>
+                            <constraint firstItem="207-ts-iCG" firstAttribute="top" secondItem="9Ci-g6-TXv" secondAttribute="bottom" constant="25" id="EfA-2g-Mrq"/>
                             <constraint firstItem="0Ch-MF-Eau" firstAttribute="leading" secondItem="jB8-fa-kbp" secondAttribute="leading" constant="25" id="KnJ-t9-qVe"/>
                             <constraint firstItem="9Ci-g6-TXv" firstAttribute="top" secondItem="0Ch-MF-Eau" secondAttribute="bottom" constant="25" id="RFo-2m-tV5"/>
                             <constraint firstItem="9Ci-g6-TXv" firstAttribute="centerX" secondItem="b3U-zq-PsI" secondAttribute="centerX" id="VJc-Vq-6ce"/>
@@ -89,6 +116,7 @@
                     <navigationItem key="navigationItem" id="trl-oe-9hU"/>
                     <connections>
                         <outlet property="confirmButton" destination="9Ci-g6-TXv" id="eE2-Vd-nHH"/>
+                        <outlet property="confirmSubjectButton" destination="207-ts-iCG" id="tr7-eY-iet"/>
                         <outlet property="textField" destination="0Ch-MF-Eau" id="kIf-Eb-cxa"/>
                     </connections>
                 </viewController>

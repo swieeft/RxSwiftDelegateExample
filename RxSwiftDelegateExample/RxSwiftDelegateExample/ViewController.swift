@@ -14,7 +14,8 @@ class ViewController: UIViewController, InputViewControllerDelegate {
 
     @IBOutlet weak var inputLabel: UILabel!
     @IBOutlet weak var openButton: UIButton!
-
+    @IBOutlet weak var openSubjectButton: UIButton!
+    
     var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,18 @@ class ViewController: UIViewController, InputViewControllerDelegate {
                 }
             })
             .disposed(by: disposeBag)
+
+        openSubjectButton.rx.tap
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .flatMap { [weak self] _ -> Observable<String> in
+                guard let inputVC = inputVC else { return .empty() }
+
+                self?.present(inputVC, animated: true, completion: nil)
+
+                return inputVC.inputString
+        }
+        .bind(to: inputLabel.rx.text)
+        .disposed(by: disposeBag)
     }
 }
 
